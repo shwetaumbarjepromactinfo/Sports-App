@@ -1,0 +1,99 @@
+﻿@page "{testId:int?}"
+@model Sports.Pages.Tests.TestDetailsModel
+@{
+    ViewData["Title"] = "TestDetails";
+}
+
+<a asp-page="/Tests/AddTest"><h2><i class="glyphicon glyphicon-chevron-left"></i></h2></a>
+<br />
+<div class="row text-center"><h2>@Model.Test.testType  @Model.Test.testDate</h2></div>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ranking</th>
+            <th class="text-center">Distance (meter)</th>
+            <th>Fitness Rating</th>
+        </tr>
+    </thead>
+    @foreach (var test in Model.allData)
+    {
+
+        <tr>
+            <td><a asp-page="/Tests/EditTestDetails" asp-route-testDetailId="@test.testDetailId">@test.userName</a></td>
+            <td class="text-center">@test.distance</td>
+            <td>
+                @if (test.distance <= 1000)
+                {
+                    <p>Below Average</p>
+                }
+                else if (test.distance > 1000 && test.distance <= 2000)
+                {
+                    <p>Average</p>
+                }
+                else if (test.distance > 2000 && test.distance <= 3500)
+                {
+                    <p>Good</p>
+                }
+                else if (test.distance > 3500)
+                {
+                    <p>Very Good</p>
+                }
+            </td>
+        </tr>
+    }
+</table>
+<div class="text-center">(Click on player to change data)</div>
+<br />
+<br />
+<form method="post" asp-page-handler="add">
+    <div class="container">
+        <div class="row text-center">
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">ADD NEW ATHLETE TO TEST</button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">ADD NEW ATHLETE TO TEST</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="testType">Name</label>
+                            <select class="form-control" asp-for="TestDetails.userId" required>
+                                <option value="">Choose</option>
+                                @if (Model.users != null)
+                                {
+                                    @foreach (var user in Model.users)
+                                    {
+                                        <option value="@user.userId">@user.userName</option>
+                                    }
+                                }
+                            </select>
+                            <span class="text-danger" asp-validation-for="TestDetails.userId"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="testDate" class="d-flex justify-content-center">Distance</label>
+                            <input type="text" class="form-control" asp-for="TestDetails.distance" required />
+                            <span class="text-danger" asp-validation-for="TestDetails.distance"></span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="Submit" class="btn btn-default">Save</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</form>
+<br />
+<form method="post" asp-page-handler="delete">
+    <div class="text-center"><button type="submit" class="btn btn-default btn-lg">DELETE TEST</button></div>
+</form>

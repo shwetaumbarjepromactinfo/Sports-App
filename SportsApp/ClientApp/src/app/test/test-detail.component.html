@@ -1,0 +1,36 @@
+<div class="panel-body">
+  <a [routerLink]="['/test']"><h2><i class="glyphicon glyphicon-chevron-left"></i></h2></a>
+  <br />
+  <div class="row text-center"><h2>{{Test.testType}} {{Test.testDate}}</h2></div>
+  <br />
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Ranking</th>
+        <th class="text-center">Distance (meter)</th>
+        <th>Fitness Rating</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let test of AllData">
+      <td><a [routerLink]="['/add-test-detail',test.testDetailId]">{{test.userName}}</a></td>
+      <td class="text-center">{{test.distance}}</td>
+      <td *ngIf="test.distance <= 1000"><p>Below Average</p></td>
+      <td *ngIf="test.distance > 1000 && test.distance <= 2000"><p>Average</p></td>
+      <td *ngIf="test.distance > 2000 && test.distance <= 3500"><p>Good</p></td>
+      <td *ngIf="test.distance > 3500"><p>Very Good</p></td>
+    </tr>
+  </table>
+  <div class="text-center">(Click on player to change data)</div>
+  <br />
+  <br />
+  <form method="post" asp-page-handler="add">
+    <div class="container">
+      <div class="row text-center">
+        <a [routerLink]="['/add-test-detail', testId ,'Add']" class="btn btn-default btn-lg" >ADD NEW ATHLETE TO TEST</a>
+      </div>
+    </div>
+  </form>
+  <br />
+     <div class="text-center"><button type="submit" class="btn btn-default btn-lg" (click)="onDelete()">DELETE TEST</button></div>
+  
+</div>

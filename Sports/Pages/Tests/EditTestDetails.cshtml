@@ -1,0 +1,74 @@
+﻿@page "{testDetailId:int?}"
+@model Sports.Pages.Tests.EditTestDetailsModel
+@{
+    ViewData["Title"] = "EditTestDetails";
+}
+
+<form method="post" asp-page-handler="edit">
+    <div class="container">
+        <div class="text-center"><h2>CHANGE DATA FOR ATHLETE</h2></div>
+        <br />
+        <input type="hidden" asp-for="testDetail.testId" />
+        <input type="hidden" asp-for="testDetail.testDetailId" />
+        <div class="form-group">
+            <label>Name</label>
+            <select class="form-control" asp-for="testDetail.userId">
+                <option value="">Choose</option>
+                @foreach (var user in Model.users)
+                {
+
+                    var isSelected = (user.userId == @Model.testDetail.userId) ? "selected" : "";
+                    @if (isSelected == "selected")
+                    {
+                        <option value="@user.userId" selected="selected">@user.userName</option>
+                    }
+                    else
+                    {
+                        <option value="@user.userId">@user.userName</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Distance(meter)</label>
+            <input type="text" asp-for="testDetail.distance" class="form-control" />
+
+        </div>
+        <div class="row text-center">
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">DELETE ATHLETE FROM TEST</button>
+        </div>
+        <br />
+        <div class="text-center">
+            <button type="submit" class="btn btn-default btn-lg">SAVE</button>
+        </div>
+    </div>
+</form>
+<form method="post" asp-page-handler="delete">
+    <div class="container">
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title">CONFIRM</h2>
+                    </div>
+
+                    <div class="modal-body">
+                        <h3>Do you want to delete this athlete from the test</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="Submit" class="btn btn-default">YES</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">NO</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</form>
+

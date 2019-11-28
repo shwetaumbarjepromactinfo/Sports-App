@@ -1,0 +1,33 @@
+<div class="panel-body">
+  <form [formGroup]="addTestForm" (ngSubmit)="onSave()">
+    <div class="card">
+      <div class="card-header">
+        <a [routerLink]="['/add-test-detail',0]" class="close">&times;</a>
+          <h4 class="title text-center">CREATE NEW TEST</h4>
+      </div>
+
+      <div class="card-body">
+        <div class="form-group">
+          <label for="testType">Type</label>
+          <select class="form-control" formControlName="testType" [ngClass]="{'is-invalid': displayMessage.testType}" required>
+            <option value="Cooper test">Cooper test</option>
+            <option value="100 Meter sprint">100 Meter sprint</option>
+          </select>
+          <span class="invalid-feedback">
+            {{displayMessage.testType}}
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="testDate" class="d-flex justify-content-center">Date</label>
+          <input type="date" class="form-control" formControlName="testDate" [ngClass]="{'is-invalid': displayMessage.testDate}" required />
+          <span class="invalid-feedback">
+            {{displayMessage.testDate}}
+          </span>
+        </div>
+      </div>
+      <div class="card-footer text-center">
+        <button type="Submit" class="btn btn-default ">CREATE TEST</button>
+      </div>
+    </div>
+  </form>
+  </div>

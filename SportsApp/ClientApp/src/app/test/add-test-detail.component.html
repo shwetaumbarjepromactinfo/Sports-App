@@ -1,0 +1,39 @@
+<div class="panel-body">
+  <form [formGroup]="addTestDetailForm" (ngSubmit)="onSave()">
+    <div class="card">
+      <div class="card-header">
+
+        <h4 class="title text-center">{{pageTitle}}</h4>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="testType">Name</label>
+          <select formControlName="userId" class="form-control" [ngClass]="{'is-invalid': displayMessage.userId}" required>
+            <option value=" ">Choose</option>
+            <option *ngFor="let Qua of users" [ngValue]="Qua.userId" [selected]="TestDetail.userId == Qua.userId">
+              {{Qua.userName}}
+            </option>
+          </select>
+          <span class="invalid-feedback">
+            {{displayMessage.userId}}
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="testDate" class="d-flex justify-content-center">Distance(meter)</label>
+          <input type="number" class="form-control" formControlName="distance" [ngClass]="{'is-invalid': displayMessage.distance}" required />
+          <input type="hidden" class="form-control" formControlName="testId" />
+          <span class="invalid-feedback">
+            {{displayMessage.testDate}}
+          </span>
+        </div>
+      </div>
+      <div class="card-footer text-center" *ngIf="addTest == 0">
+        <div class="text-center"><button type="button" class="btn btn-default" (click)="onDelete()">DELETE ATHLETE FROM TEST</button></div>
+      </div>
+      <br/>
+        <div class="card-footer text-center">
+          <button type="Submit" class="btn btn-default ">Save</button>
+        </div>
+      </div>
+</form>
+</div>

@@ -1,0 +1,9 @@
+C:\ASP.NET\Sports\Sports.Core\bin\Debug\netcoreapp2.1\Sports.Core.deps.json
+C:\ASP.NET\Sports\Sports.Core\bin\Debug\netcoreapp2.1\Sports.Core.dll
+C:\ASP.NET\Sports\Sports.Core\bin\Debug\netcoreapp2.1\Sports.Core.pdb
+C:\ASP.NET\Sports\Sports.Core\obj\Debug\netcoreapp2.1\Sports.Core.csprojAssemblyReference.cache
+C:\ASP.NET\Sports\Sports.Core\obj\Debug\netcoreapp2.1\Sports.Core.AssemblyInfoInputs.cache
+C:\ASP.NET\Sports\Sports.Core\obj\Debug\netcoreapp2.1\Sports.Core.AssemblyInfo.cs
+C:\ASP.NET\Sports\Sports.Core\obj\Debug\netcoreapp2.1\Sports.Core.dll
+C:\ASP.NET\Sports\Sports.Core\obj\Debug\netcoreapp2.1\Sports.Core.pdb
+C:\ASP.NET\Sports\Sports.Core\obj\Debug\netcoreapp2.1\Sports.Core.csproj.CoreCompileInputs.cache

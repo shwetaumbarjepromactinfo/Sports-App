@@ -1,0 +1,14 @@
+C:\ASP.NET\Sports\Sports.Data\bin\Debug\netcoreapp2.1\Sports.Core.dll
+C:\ASP.NET\Sports\Sports.Data\obj\Debug\netcoreapp2.1\Sports.Data.csprojAssemblyReference.cache
+C:\ASP.NET\Sports\Sports.Data\obj\Debug\netcoreapp2.1\Sports.Data.AssemblyInfoInputs.cache
+C:\ASP.NET\Sports\Sports.Data\obj\Debug\netcoreapp2.1\Sports.Data.AssemblyInfo.cs
+C:\ASP.NET\Sports\Sports.Data\bin\Debug\netcoreapp2.1\Sports.Data.deps.json
+C:\ASP.NET\Sports\Sports.Data\bin\Debug\netcoreapp2.1\Sports.Data.runtimeconfig.json
+C:\ASP.NET\Sports\Sports.Data\bin\Debug\netcoreapp2.1\Sports.Data.runtimeconfig.dev.json
+C:\ASP.NET\Sports\Sports.Data\bin\Debug\netcoreapp2.1\Sports.Data.dll
+C:\ASP.NET\Sports\Sports.Data\bin\Debug\netcoreapp2.1\Sports.Data.pdb
+C:\ASP.NET\Sports\Sports.Data\bin\Debug\netcoreapp2.1\Sports.Core.pdb
+C:\ASP.NET\Sports\Sports.Data\obj\Debug\netcoreapp2.1\Sports.Data.csproj.CopyComplete
+C:\ASP.NET\Sports\Sports.Data\obj\Debug\netcoreapp2.1\Sports.Data.dll
+C:\ASP.NET\Sports\Sports.Data\obj\Debug\netcoreapp2.1\Sports.Data.pdb
+C:\ASP.NET\Sports\Sports.Data\obj\Debug\netcoreapp2.1\Sports.Data.csproj.CoreCompileInputs.cache
